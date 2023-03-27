@@ -36,17 +36,30 @@ Firstly, cluster the genes with NLP methods using data from gene library (gene d
 
 # Jin
 
-### I focused on predicting the Mutation count.
+Mutation Count Analyst - Gene Expression and Clinical Data Analysis
 
-**The models I used is Poisson regression model,because this helps to identify which predictor variables are associated with the mutation count and how strong these associations are .**
+This project aims to identify potential therapeutic targets for new cancer treatments by analyzing gene expression and clinical data and exploring the relationship between different genes, proteins, and cancer mutation count.
 
-### Results
--Mean squared error: 35.91208791208791 R-squared: 0.7939618834888497
-The Poisson regression model was used to predict the mutation count using the X variables. The model achieved a good R-squared value of 0.79, indicating that it is a reliable model for prediction. This means that the X variables included in the model are useful in explaining the variability in the mutation count, and they have a reasonably strong relationship with the outcome variable. 
+Literature Review
+Genetic mutations can cause cancer by altering protein function, affecting crucial cellular processes such as cell growth.
 
--Coefficients: After calculating coefficients of x variables, the feature importance information was then extracted using the coefficients obtained from the model. The top five features with the largest coefficients were TMB_NONSYNONYMOUS_0.033333333, SAMPLE_ID_TCGA-HT-8107-01, SAMPLE_ID_TCGA-P5-A5F6-01, MSI_SCORE_MANTIS_0.3526, and MSI_SENSOR_SCORE_0.48. These features suggest that the presence of certain gene mutations, tumor mutation burden, and microsatellite instability score may be important predictors of mutation count.
+Data
+The analysis used gene expression data generated from RNA sequencing (RNA-seq) experiments and clinical data associated with cancer samples from cBioPortal. The dataset included 20,532 genes and 514 patients, along with 31 clinical attributes for each patient, including neoplasm cancer status, diagnosis age, sex, and survival status.
 
--Next steps: We may want to use NMF to identify patterns and relationships between the features. NMF is a matrix factorization that decomposes a matrix into two matrices of lower rank. In this case, the input matrix X is factorized into two matrices W and H, where W represents the basis vectors and H represents the coefficient matrix. In our case, X is a data matrix where each row represents a different sample or observation (e.g. a cell in a single-cell RNA sequencing dataset). W represents a set of "metagenes" (or gene expression patterns) that are shared across patients, and H represents the contribution of each patient to each metagene. (Not sure whether this is on the right track)
+Models
+Lasso regression, ElasticNetCV models were used to predict feature importance ranking and corresponding coefficients. The RFE method was not used due to discrepancies in feature importance ranking compared to the other two models.
+
+Gene Interpretation
+The following genes were identified as the most important by the Lasso regression and ElasticNetCV models:
+
+HOXB9: Prognostic marker in head and neck cancer (unfavorable) and endometrial cancer (unfavorable)
+PCDHB6: Prognostic marker in renal cancer (unfavorable)
+HNRNPCL1: Gene product is not prognostic
+HOXB8: Prognostic marker in renal cancer (favorable)
+PRAMEF2: Gene product is not prognostic
+
+Conclusion: 
+The above five features are the top most important gene and protein features correspond to mutation count and cancer. The analysis of gene expression and clinical data identified HOXB9 and PCDHB6 as unfavorable prognostic markers for certain types of cancer, while HOXB8 was identified as a favorable prognostic marker for renal cancer. The expression of HNRNPCL1 and PRAMEF2 was not found to be associated with patient survival or disease outcome.Based on the results of this project, we were able to identify these genes and proteins strongly associated with increased cancer mutation count using machine learning models. These variables may indicate potential therapeutic targets for new cancer treatments. Further research is needed to determine the precise role of these variables in cancer development and to validate their potential as therapeutic targets. 
 
 # Emile
 
