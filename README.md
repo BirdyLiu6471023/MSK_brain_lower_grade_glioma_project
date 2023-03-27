@@ -36,30 +36,30 @@ Firstly, cluster the genes with NLP methods using data from gene library (gene d
 
 # Jin
 
-Mutation Count Analyst - Gene Expression and Clinical Data Analysis
+## **Mutation Count Analyst** - Gene Expression and Clinical Data Analysis
 
 This project aims to identify potential therapeutic targets for new cancer treatments by analyzing gene expression and clinical data and exploring the relationship between different genes, proteins, and cancer mutation count.
 
-Literature Review
+### Literature Review
 Genetic mutations can cause cancer by altering protein function, affecting crucial cellular processes such as cell growth.
 
-Data
+### Data
 The analysis used gene expression data generated from RNA sequencing (RNA-seq) experiments and clinical data associated with cancer samples from cBioPortal. The dataset included 20,532 genes and 514 patients, along with 31 clinical attributes for each patient, including neoplasm cancer status, diagnosis age, sex, and survival status.
 
-Models
-Lasso regression, ElasticNetCV models were used to predict feature importance ranking and corresponding coefficients. The RFE method was not used due to discrepancies in feature importance ranking compared to the other two models.
+### Models
+**Lasso regression, ElasticNetCV** models were used to predict feature importance ranking and corresponding coefficients. The RFE method was not used due to discrepancies in feature importance ranking compared to the other two models.
 
-Gene Interpretation
+### Gene Interpretation
 The following genes were identified as the most important by the Lasso regression and ElasticNetCV models:
 
-HOXB9: Prognostic marker in head and neck cancer (unfavorable) and endometrial cancer (unfavorable)
+HOXB9: Prognostic marker in head and neck cancer and endometrial cancer (unfavorable)
 PCDHB6: Prognostic marker in renal cancer (unfavorable)
 HNRNPCL1: Gene product is not prognostic
 HOXB8: Prognostic marker in renal cancer (favorable)
 PRAMEF2: Gene product is not prognostic
 
-Conclusion: 
-The above five features are the top most important gene and protein features correspond to mutation count and cancer. The analysis of gene expression and clinical data identified HOXB9 and PCDHB6 as unfavorable prognostic markers for certain types of cancer, while HOXB8 was identified as a favorable prognostic marker for renal cancer. The expression of HNRNPCL1 and PRAMEF2 was not found to be associated with patient survival or disease outcome.Based on the results of this project, we were able to identify these genes and proteins strongly associated with increased cancer mutation count using machine learning models. These variables may indicate potential therapeutic targets for new cancer treatments. Further research is needed to determine the precise role of these variables in cancer development and to validate their potential as therapeutic targets. 
+### Conclusion: 
+The above five features are the top most important gene and protein features correspond to mutation count and cancer. From the literature review, The analysis of gene expression and clinical data identified HOXB9 and PCDHB6 as unfavorable prognostic markers for certain types of cancer, while HOXB8 was identified as a favorable prognostic marker for renal cancer. The expression of HNRNPCL1 and PRAMEF2 was not found to be associated with patient survival or disease outcome.Based on the results of this project, we were able to identify these genes and proteins strongly associated with increased cancer mutation count using machine learning models. These variables may indicate potential therapeutic targets for new cancer treatments. Further research is needed to determine the precise role of these variables in cancer development and to validate their potential as therapeutic targets. 
 
 # Emile
 
